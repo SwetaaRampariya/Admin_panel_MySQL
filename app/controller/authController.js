@@ -183,7 +183,7 @@ exports.updatePassword = async(req, res) => {
     try {
         console.log(req.body)
 
-        let { error } = resetpasswordValidate(req.body);
+        let { error } = updatePasswordValidate(req.body);
         if (error) {
             
             console.log(error)
@@ -211,6 +211,46 @@ exports.updatePassword = async(req, res) => {
         logger.error("err", err);
     }
 };
+
+
+
+exports.resetPassword = async(req, res) => {
+    try {
+        console.log(req.body)
+
+        let { error } = updatePasswordValidate(req.body);
+        if (error) {
+            
+            console.log(error)
+
+        } else {
+            const Email = req.body.Email;
+            db.query(`SELECT * FROM registration WHERE Email = ?`, [Email], async(err, response) => {
+                if (response !="") {
+                    const encryptedPassword = await bcrypt.hash(req.body.Password, saltRounds);
+                    if (encryptedPassword) {
+                        db.query(`UPDATE registration set Password=? WHERE Email=?`, [encryptedPassword, Email]);
+                        //res.send("Password Updated....")
+                        res.render('login')
+                    } else {
+                        res.send("Invalid Password");
+                    }
+                } else{
+                    res.send(err)
+                }
+            });
+
+        }
+
+    } catch (err) {
+        logger.error("err", err);
+    }
+};
+
+
+
+
+
 
 
 exports.viewProfile = async(req, res) => {
