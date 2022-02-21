@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Admin Panel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+        body {
+            font-family: 'Barlow', sans-serif;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
+                <h1 class="bi bi-bootstrap text-primary d-flex my-4 justify-content-center"></h1>
+                <div class="list-group rounded-0">
+                    
+                    <a href="#" class="list-group-item list-group-item-action active border-0 d-flex align-items-center" style="background-color: blueviolet;">
+                        <span class="bi bi-border-all"></span>
+                        <span class="ml-2">Dashboard</span>
+                    </a>
+                    <a href="/viewprofile" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <input class="btn btn-primary" style="margin: 0% 2%; background-color: blueviolet;" type="button" value="ViewProfile">
+                    </a>
+
+
+                    <span class="bi bi-chevron-down small"></span>
+
+                    <a href="changePassword?Email=<%=Email%>" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <span class="bi bi-cart-plus"></span>
+                        <input class="btn btn-primary" style="margin: 0% 2%; background-color: blueviolet;" type="submit" value="ResetPassword">
+                    </a>
+
+                    <!-- <a href="contact" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <span class="bi bi-cart-plus"></span>
+                        <input class="btn btn-primary" style="margin: 0% 2%; background-color: blueviolet;" type="button" value="Contact">
+                    </a> -->
+
+                    <a href="category" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <span class="bi bi-cart-plus"></span>
+                        <input class="btn btn-primary" style="margin: 0% 2%;background-color: blueviolet;" type="button" value="Category">
+                    </a>
+                    <a href="testimonial" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <span class="bi bi-cart-plus"></span>
+                        <input class="btn btn-primary" style="margin: 0% 2%;background-color: blueviolet;" type="button" value="Testimonial">
+                    </a>
+                    <a href="portfolio" class="list-group-item list-group-item-action border-0 align-items-center">
+                        <span class="bi bi-cart-plus"></span>
+                        <input class="btn btn-primary" style="margin: 0% 2%; background-color: blueviolet;" type="button" value="Portfolio">
+                    </a>
+
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <article class="p-4 rounded shadow-sm border-left mb-4">
+                    <a href="logout" onclick="return confirm('Are you sure you want to logout?')">
+                        <button class="btn btn-success" style="float: right; background-color: blueviolet; margin-top: 500px;">LOG OUT</button><br>
+                        <br>
+                    </a>
+                </article>
+                <br>
+            </div>
+
+
+            <div class="jumbotron jumbotron-fluid rounded bg-white border-0 shadow-sm border-left px-4">
+                <div class="container">
+                    <br>
+
+                    <h1 class="display-6 mb-4 text-primary" >Welcome To The Page</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

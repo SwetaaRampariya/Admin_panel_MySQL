@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTP VERIFICATION</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body class="bg-black">
+
+    <div class="head mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="text-center">
+                        <a href="login" class="logo">
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h4 class="login bg-olive">OTP</h4>
+                            </div>
+                            <% if (typeof error !=='undefined' && error.length> 0) { %>
+
+                                <div class="alert alert-warning" style="text-align: center; font-size: 17px!important; border-radius: 0%;">
+                                    <%= error %> &nbsp; &nbsp; &nbsp;<a href="/" style="color:#3d9970">&#10006;</a>
+                                </div>
+
+                                <% } %>
+
+                                    <form method="POST" action="/verifyOtp">
+                                        <input type="hidden" name="Email" value="<%= Email %>">
+
+                                        <div class="bg-gray">
+                                            <p style="font-size: 15px;">Enter the OTP received in your EMAIL</p>
+                                            <div class="form-group mb-3">
+                                                <input id="otp" class="form-control" name="otp" type="text" placeholder="Enter Received OTP">
+                                            </div>
+
+                                        </div>
+                                        <div class="footer">
+                                            <input type="submit" name="submit" class="btn bg-olive btn-block" value="Verify OTP" />
+                                        </div>
+                                    </form>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center pass">
+                            <p> <a href="/" class="text-muted ml-1">Back to Login?</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
